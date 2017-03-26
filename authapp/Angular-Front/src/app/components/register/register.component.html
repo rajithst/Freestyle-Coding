@@ -1,0 +1,43 @@
+
+<form class="form-horizontal" (submit)="registerData()">
+  <fieldset>
+    <legend>Register</legend>
+
+    <div class="form-group">
+
+      <div class="form-group">
+        <label for="inputEmail" class="col-lg-2 control-label">Username</label>
+        <div class="col-lg-10">
+          <input type="text" class="form-control"  placeholder="Username" name="username" [(ngModel)]="username">
+        </div>
+      </div>
+
+      <label for="inputEmail" class="col-lg-2 control-label">Name</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control"  placeholder="name" name="name" [(ngModel)]="name">
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+      <div class="col-lg-10">
+        <input type="email" class="form-control"  placeholder="Email" name="email" [(ngModel)]="email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+      <div class="col-lg-10">
+        <input type="password" class="form-control"  placeholder="Password" name="password" [(ngModel)]="password">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="reset" class="btn btn-default">Cancel</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+
+  </fieldset>
+</form>
