@@ -33,11 +33,14 @@ router.post("/login",function (req,res){
     const email = req.body.email;
     const password = req.body.password;
 
+    console.log(email);
+
     User.findByEmail(email,function (err,user) {
         if(err) throw err;
 
         if (!user){
             res.json({state:false,msg:"No user found"});
+            return false;
 
         }
 
@@ -46,7 +49,7 @@ router.post("/login",function (req,res){
 
             if (match){
 
-                const token = jwt.sign(user, config.secret,{expiresIn:86400});
+                const token = jwt.sign(user, config.secret,{expiresIn:86400*3});
                 res.json(
                     {
                         state:true,

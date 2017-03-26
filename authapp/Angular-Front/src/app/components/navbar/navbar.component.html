@@ -13,8 +13,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a [routerLink]="['/register']">Register</a></li>
-        <li><a [routerLink]="['/login']">Login</a></li>
+        <li *ngIf="authService.loggedIn()"><a [routerLink]="['/profile']">Profile</a></li>
+        <li *ngIf="!authService.loggedIn()"><a [routerLink]="['/register']">Register</a></li>
+        <li *ngIf="!authService.loggedIn()"><a [routerLink]="['/login']">Login</a></li>
+        <li *ngIf="authService.loggedIn()"><a href="#" (click)="logoutUser()">Logout</a></li>
 
       </ul>
     </div>
