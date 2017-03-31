@@ -12,13 +12,13 @@
 
     <form>
     <ion-row>
-      <ion-col col-4>
+      <ion-col col-4 id="langbar">
 
         <ion-label>Language</ion-label>
       </ion-col>
       <ion-col col-8>
 
-        <ion-select name="language" [(ngModel)]="language">
+        <ion-select name="language" [(ngModel)]="language" id="langselect">
           <ion-option  value="Java">Java</ion-option>
           <ion-option  value="Python">Python</ion-option>
           <ion-option  value="CSS">CSS</ion-option>
@@ -55,7 +55,7 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col col-12>
+      <ion-col col-12 id="searchbar">
         <ion-searchbar (keyup)="searchData($event)"></ion-searchbar>
         <div *ngIf="data">
 

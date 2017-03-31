@@ -7,15 +7,23 @@
 <ion-header>
   <div *ngIf="moredata">
   <ion-navbar>
-    <div>
-      <ion-title>{{ moredata.name}}</ion-title>
-      <img src="{{moredata.owner.avatar_url}}"  width="50" height="50"> &nbsp; <strong>{{moredata.full_name}}</strong>
-      </div>
+    <ion-row>
+      <ion-col col-4>
+        <img src="{{moredata.owner.avatar_url}}"  width="50" height="40">
+      </ion-col>
+      <ion-col col-4><ion-title>{{ moredata.name}}</ion-title></ion-col>
+      <ion-col col-4>
+      <button ion-button (click)="backClick()"><ion-icon name="backspace"></ion-icon> &nbsp;
+         Back</button>
+
+      </ion-col>
+    </ion-row>
 
   </ion-navbar>
   </div>
 </ion-header>
 
 <ion-content padding>
+
 
 </ion-content>

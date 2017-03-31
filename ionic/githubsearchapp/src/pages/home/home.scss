@@ -1,3 +1,15 @@
 page-home {
 
+  ion-col#langbar > ion-label{
+
+    color: red;
+    text-align:center;
+  }
+
+  #langselect{
+
+    border:1px solid red;
+    width:100%;
+  }
+
 }

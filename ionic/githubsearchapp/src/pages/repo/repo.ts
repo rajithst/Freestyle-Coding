@@ -25,4 +25,8 @@ export class RepoPage {
 
   }
 
+  backClick(){
+    this.navCtrl.pop();
+  }
+
 }
