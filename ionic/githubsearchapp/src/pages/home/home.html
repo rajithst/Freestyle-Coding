@@ -9,16 +9,14 @@
 <ion-content padding>
 
   <ion-grid>
-
-    <form>
     <ion-row>
-      <ion-col col-4 id="langbar">
+      <ion-col col-4>
 
         <ion-label>Language</ion-label>
       </ion-col>
       <ion-col col-8>
 
-        <ion-select name="language" [(ngModel)]="language" id="langselect">
+        <ion-select name="language" [(ngModel)] = "language">
           <ion-option  value="Java">Java</ion-option>
           <ion-option  value="Python">Python</ion-option>
           <ion-option  value="CSS">CSS</ion-option>
@@ -55,47 +53,26 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col col-12 id="searchbar">
-        <ion-searchbar (keyup)="searchData($event)"></ion-searchbar>
-        <div *ngIf="data">
-
+      <ion-col col-12>
+        <ion-searchbar (keyup)="findData($event)"></ion-searchbar>
+        <div *ngIf="repos">
           <ion-list>
-            <ion-item *ngFor="let res of data">
+            <ion-item *ngFor="let res of repos">
               <ion-avatar item-left>
                 <img src="{{res.owner.avatar_url}}">
               </ion-avatar>
               <h2>{{res.name}}</h2>
-              <p><ion-badge>{{res.full_name}}</ion-badge></p>
-
-              <button (click)="clicklink(res.id)" ion-button="">Load more</button>
+              <p><ion-badge item-right>{{res.full_name}}</ion-badge></p>
+              <button ion-button (click)="MoreData(res.id)"> Click Here</button>
             </ion-item>
           </ion-list>
 
-          <!--<div *ngFor="let res of data">
-
-            <div class="row">
-              <div class="col-md-2"></div>
-              <div class="col-md-8">
-
-                <div class="search-res well">
-                  <h4><a href="#">{{res.name}}</a></h4>
-                  <div>
-                    <img src="{{res.owner.avatar_url}}" class="img-circle" width="50" height="50"> &nbsp; <strong>{{res.full_name}}</strong>
-                    &lt;!&ndash;<span *ngFor="let genre of res.genres">{{genre}}</span>&ndash;&gt;
-                  </div>
-                </div>
-
-              </div>
-              <div class="col-md-2"></div>
-            </div>
-
-          </div>-->
-
         </div>
+
+
 
       </ion-col>
     </ion-row>
-    </form>
   </ion-grid>
 
 </ion-content>

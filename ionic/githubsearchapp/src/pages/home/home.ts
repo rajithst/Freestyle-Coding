@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
-import  { Requese } from '../../providers/requese';
-import  { RepoPage } from '../repo/repo';
+
+import { Service } from '../../providers/service';
+
+import { RepositoryPage } from '../repository/repository';
+
 
 
 
@@ -12,36 +15,33 @@ import  { RepoPage } from '../repo/repo';
 })
 export class HomePage {
 
-  language:string;
-  key:string;
-  user:Object;
-  data:any;
-  id:any;
+  language:String;
+  repos:any;
+
   constructor(
     public navCtrl: NavController,
-    public Requests:Requese
-  ) {
+    public ServiceProvider:Service
+  ) {}
 
-  }
+  findData(key:any){
 
-  searchData(key){
-
-    const user = {
-      lang:this.language,
-      term : key.target.value
+   const data = {
+    keyword:key.target.value,
+    lang:this.language
   };
 
-    this.Requests.RequestToapi(user).subscribe(res=>{
+  this.ServiceProvider.searchRepo(data).subscribe(res=>{
+    this.repos = res.items;
 
-      this.data = res.items;
     });
+  }
+
+  MoreData(id){
+
+    this.navCtrl.push(RepositoryPage,{id:id});
+
 
   }
 
-  clicklink(id){
-    this.navCtrl.push(RepoPage,{id:id});
-
-
-  }
 
 }

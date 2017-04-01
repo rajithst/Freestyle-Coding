@@ -2,10 +2,9 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { RepoPage } from '../pages/repo/repo';
+import { RepositoryPage } from '../pages/repository/repository';
 
-import { Requese } from '../providers/requese';
-
+import  { Service} from '../providers/service';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -13,7 +12,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     HomePage,
-    RepoPage
+    RepositoryPage
+
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -22,13 +22,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
-    RepoPage
+    RepositoryPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Requese
+    Service
+
   ]
 })
 export class AppModule {}
