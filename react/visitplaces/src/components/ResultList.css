@@ -1,0 +1,13 @@
+.profile-teaser-left {
+    float: left; width: 20%; margin-right: 1%;
+}
+.profile-img img {
+    width: 100%; height: auto;
+}
+
+.profile-teaser-main {
+    float: left; width: 79%;
+}
+
+.info { display: inline-block; margin-right: 10px; color: #777; }
+.info span { font-weight: bold; }
