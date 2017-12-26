@@ -1,0 +1,46 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#" setmycolor>Brand</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+        <li (click)="stateChanger()" ><a href="#">change State</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['activities','30']">Activities</a></li>
+        <li routerLinkActive="active"><a routerLink="dashboard">Dashboard</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['items']" [queryParams]="{item:'new'}">Items</a></li>
+
+      </ul>
+
+      <div *ngIf="state;then logged else logout"> state true</div>
+
+
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+<ng-template #logout>
+  <li><a href="#">Please Login</a></li>
+</ng-template>
+
+<ng-template #logged>
+    <form class="navbar-form navbar-left">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</ng-template>
