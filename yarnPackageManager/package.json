@@ -1,0 +1,8 @@
+{
+  "name": "myProject",
+  "version": "1.0.1",
+  "description": "my demo project",
+  "main": "app.js",
+  "author": "Rajith Thennakoon",
+  "license": "MIT"
+}
